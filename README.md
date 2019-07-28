@@ -5,7 +5,7 @@ The program parses a dataset and a test set. Given an input for k neighbors, the
 
 The comparison folder contains a slightly modified main program and a brief analysis of the performance of each metric for a given k in a Jupyter notebook.
 
-To run the driver program, place KNNdata.txt, KNNtest.txt, build_driver.sh, main_driver.cpp, routines.h and routines.cpp in the same directory. Then type
+To run the driver program, place KNNdata.txt, KNNtest.txt, main_driver.cpp, routines.h and routines.cpp in the same directory. Then type
     
     >>> g++ main_driver.cpp routines.h routines.cpp
     >>> ./a.out <euclid_neighbors> <manhattan_neighbors>
