@@ -5,8 +5,7 @@ The program parses a dataset and a test set. Given an input for k neighbors, the
 
 To run the driver program, place KNNdata.txt, KNNtest.txt, build_driver.sh, main_driver.cpp, routines.h and routines.cpp in the same directory. Then type
     
-    >>> chmod +x build_driver.sh
-    >>> ./build_driver.sh
+    >>> g++ main_driver.cpp routines.h routines.cpp
     >>> ./a.out <euclid_neighbors> <manhattan_neighbors>
   
 where euclid_neighbors and manhattan_neighbors are commandline arguments to be passed to the respective distance functions.
