@@ -11,3 +11,5 @@ To run the driver program, place KNNdata.txt, KNNtest.txt, main_driver.cpp, rout
     >>> ./a.out <euclid_neighbors> <manhattan_neighbors>
   
 where euclid_neighbors and manhattan_neighbors are commandline arguments to be passed to the respective distance functions.
+
+![GitHub Logo](/images/logo.png)
