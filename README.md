@@ -10,6 +10,6 @@ To run the driver program, place KNNdata.txt, KNNtest.txt, main_driver.cpp, rout
     >>> g++ main_driver.cpp routines.h routines.cpp
     >>> ./a.out <euclid_neighbors> <manhattan_neighbors>
   
-where euclid_neighbors and manhattan_neighbors are commandline arguments to be passed to the respective distance functions.
+where euclid_neighbors and manhattan_neighbors are arguments to be passed to the respective distance functions.
 
 ![Accuracy Comparison](comparison/Euclid_vs_Manhattan.png)
