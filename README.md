@@ -12,4 +12,4 @@ To run the driver program, place KNNdata.txt, KNNtest.txt, main_driver.cpp, rout
   
 where euclid_neighbors and manhattan_neighbors are commandline arguments to be passed to the respective distance functions.
 
-![GitHub Logo](/comparison/Euclid vs Manhattan.png)
+![Accuracy Comparison](comparison/Euclid_vs_Manhattan.png)
