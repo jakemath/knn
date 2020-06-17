@@ -7,8 +7,8 @@ The comparison folder contains a slightly modified main program and a brief anal
 
 To run the driver program, place KNNdata.txt, KNNtest.txt, main_driver.cpp, routines.h and routines.cpp in the same directory. Then type
     
-    >>> g++ main_driver.cpp routines.h routines.cpp
-    >>> ./a.out <euclid_neighbors> <manhattan_neighbors>
+    $ g++ -std=c++2a main_driver.cpp routines.h routines.cpp
+    $ ./a.out <euclid_neighbors> <manhattan_neighbors>
   
 where euclid_neighbors and manhattan_neighbors are arguments to be passed to the respective distance functions.
 
