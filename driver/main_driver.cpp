@@ -25,7 +25,6 @@ int main(int argc, char* argv[])
         cout << *i << endl;
     // Compute distances and report predictions
     int euclid_count = 0, manhattan_count = 0, euclid_predict, manhattan_predict;
-    list<int> euclid_predictions, manhattan_predictions;
     cout << "ACTUAL \t EUCLIDEAN \t MANHATTAN" << endl;
     for (i = testframe.begin(); i != testframe.end(); ++i)
     {
