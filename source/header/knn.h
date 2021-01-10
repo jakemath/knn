@@ -1,6 +1,5 @@
 //
-//  routines.h
-//  knn
+//  knn.h
 //
 //  Created by Jacob Mathai on 3/12/19.
 //  Copyright © 2019 Jacob Mathai. All rights reserved.
