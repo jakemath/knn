@@ -6,7 +6,7 @@
 //  Copyright © 2019 Jacob Mathai. All rights reserved.
 //
 
-#include "routines.h"
+#include "knn.h"
 
 double sq_euclid_dist(point x, point y)    // Square Euclidean distance
 {

@@ -6,8 +6,8 @@
 //  Copyright © 2019 Jacob Mathai. All rights reserved.
 //
 
-#ifndef routines_h
-#define routines_h
+#ifndef knn_h
+#define knn_h
 
 #include <iostream>
 #include <list>
@@ -56,4 +56,4 @@ void load_csv (std::istream& in, list<point>& frame);
 
 std::ostream& operator << (std::ostream& out, const point& p);  // Print point
 
-#endif /* routines_h */
+#endif /* knn_h */
