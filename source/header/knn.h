@@ -35,8 +35,7 @@ struct point {
 // Comparison operator for ordering points in dataframe
 // according to distance to point of interest
 struct point_compare {
-    bool operator() (const point& x, const point& y) const
-    {
+    bool operator() (const point& x, const point& y) const {
         if (x.distance != y.distance)
             return x.distance < y.distance;
         return x.attributes.front() < y.attributes.front();
