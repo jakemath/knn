@@ -11,8 +11,9 @@
 
 double sq_euclid_dist(point x, point y) {    // Square Euclidean distance
     double total = 0, diff;
-    list<double>::iterator i = x.attributes.begin(), j = y.attributes.begin();
-    for (; i != x.attributes.end() && j != y.attributes.end() ; ++i, ++j) {
+    for (list<double>::iterator i = x.attributes.begin(), j = y.attributes.begin(); 
+            i != x.attributes.end() && j != y.attributes.end(); 
+            ++i, ++j) {
         diff = *i - *j;
         total += diff*diff;
     }
@@ -22,8 +23,9 @@ double sq_euclid_dist(point x, point y) {    // Square Euclidean distance
 
 double manhattan_dist(point x, point y) {   // Manhattan distance
     double total = 0;
-    list<double>::iterator i = x.attributes.begin(), j = y.attributes.begin();
-    for (; i != x.attributes.end() && j != y.attributes.end() ; ++i, ++j)
+    for (list<double>::iterator i = x.attributes.begin(), j = y.attributes.begin(); 
+            i != x.attributes.end() && j != y.attributes.end(); 
+            ++i, ++j)
         total += abs(*i - *j);
     return total;
 }
@@ -32,9 +34,9 @@ double manhattan_dist(point x, point y) {   // Manhattan distance
 // Classify point c based on k nearest neighbors in dataframe with given distance function
 int knn_classify(list<point>& dataframe, point c, int k, double (*dist)(point, point)) {
     set<point, point_compare> distances; // Store points in dataframe, ordered by proximity to c
-    for (list<point>::iterator i = dataframe.begin(); i != dataframe.end(); ++i) {   // Iterate through all points in dataframe
-        i->distance = dist(c, *i); // Compute distance to c
-        distances.insert(*i); // Insert into set based on distance
+    for (auto& datapoint : dataframe) {   // Iterate through all points in dataframe
+        datapoint.distance = dist(c, datapoint); // Compute distance to c
+        distances.insert(datapoint); // Insert into set based on distance
     }
     map<int, int> counts; // Map classification to number of instances in the k-nearest neighbors to c
     int l = 1, max_instances = 1, max_type = -1;
@@ -78,8 +80,7 @@ void load_csv(std::istream& in, list<point>& frame) {
 }
 
 std::ostream& operator <<(std::ostream& out, const point& p) {
-    list<double>::const_iterator i = p.attributes.begin();
-    for (; i != p.attributes.end(); ++i)
+    for (list<double>::const_iterator i = p.attributes.begin(); i != p.attributes.end(); ++i)
         out << *i << " ";
     return out;
 }
