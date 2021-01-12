@@ -25,8 +25,7 @@ using std::endl;
 
 // Struct to represent a single data point in dataframe
 // and distance to point of interest
-struct point
-{
+struct point {
     point() {}
     point(list<double>& data) : attributes(data) {} // Attribute values stored in list
     list<double> attributes; // Attribute values stored in list. attributes.back() is the classification
@@ -35,8 +34,7 @@ struct point
 
 // Comparison operator for ordering points in dataframe
 // according to distance to point of interest
-struct point_compare
-{
+struct point_compare {
     bool operator() (const point& x, const point& y) const
     {
         if (x.distance != y.distance)
@@ -47,9 +45,7 @@ struct point_compare
 
 double sq_euclid_dist (point x, point y);   // Square euclidean distance
 double manhattan_dist (point x, point y);   // Manhattan distance
-
 int knn_classify (list<point>& dataframe, point c, int k, double (*dist)(point,point));   // KNN function
-
 void split (const std::string& s, char c, point& p); // Txt file parsing functions
 void load_csv (std::istream& in, list<point>& frame);
 
