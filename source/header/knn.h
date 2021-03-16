@@ -8,25 +8,24 @@
 #ifndef knn_h
 #define knn_h
 
-#include <iostream>
-#include <list>
 #include <map>
 #include <set>
+#include <list>
 #include <cmath>
-#include <iterator>
 #include <fstream>
 #include <sstream>
+#include <iterator>
+#include <iostream>
 
-using std::list;
 using std::map;
 using std::set;
+using std::list;
 using std::cout;
 using std::endl;
 
 // Struct to represent a single data point in dataframe
 // and distance to point of interest
-struct point
-{
+struct point {
     point() {}
     point(list<double>& data) : attributes(data) {} // Attribute values stored in list
     list<double> attributes; // Attribute values stored in list. attributes.back() is the classification
@@ -35,24 +34,19 @@ struct point
 
 // Comparison operator for ordering points in dataframe
 // according to distance to point of interest
-struct point_compare
-{
-    bool operator() (const point& x, const point& y) const
-    {
+struct point_compare {
+    bool operator() (const point& x, const point& y) const {
         if (x.distance != y.distance)
             return x.distance < y.distance;
         return x.attributes.front() < y.attributes.front();
     }
 };
 
-double sq_euclid_dist (point x, point y);   // Square euclidean distance
-double manhattan_dist (point x, point y);   // Manhattan distance
-
-int knn_classify (list<point>& dataframe, point c, int k, double (*dist)(point,point));   // KNN function
-
-void split (const std::string& s, char c, point& p); // Txt file parsing functions
-void load_csv (std::istream& in, list<point>& frame);
-
-std::ostream& operator << (std::ostream& out, const point& p);  // Print point
+double sq_euclid_dist(point x, point y);
+double manhattan_dist(point x, point y);
+int knn_classify(list<point>& dataframe, point c, int k, double (*dist)(point,point));
+void split(const std::string& s, char c, point& p);
+void load_csv(std::istream& in, list<point>& frame);
+std::ostream& operator <<(std::ostream& out, const point& p);
 
 #endif /* knn_h */
